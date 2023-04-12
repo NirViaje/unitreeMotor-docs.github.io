@@ -41,8 +41,7 @@ $$ \lvert \tau_{ff} \rvert<  \frac{2^{15}}{256} = 128 $$
             数据包头部
         </td>
         <td>
-            0xFD 0xEE<br>
-            注意:与来自主机方向的包头不同
+            0xFE 0xEE<br>
         </td>
     </tr>
 
