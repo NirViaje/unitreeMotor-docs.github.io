@@ -26,7 +26,7 @@ $$ \lvert \tau_{ff} \rvert&lt; \frac{2^{15}}{256} = 128 $$
 模式设置(1Byte) | 16-19（4bit） | ID | 目标电机ID | 0,1,2,3 … 13,1415.保留
 20-22（3bit） | STATUS | 电机工作模式 | 0.锁定(Default)1.FOC闭环2.编码器校准3-7.保留
 控制参数(12byte) | 23（1bit） | 保留
-控制参数(12byte) | 24-39（2Byte） | $\tau_{set}$ | 期望电机转矩值 | 例： $$t_{ff} = 0.75(N*m)$$ <br>$$\tau_{set} = t_{ff} *256 = 0.75*256 =192 $$ <br>$$注：\lvert t_{ff} \rvert \leqslant 127.99N \bullet m $$
+控制参数(12byte) | 24-39（2Byte） | $\tau_{set}$ | 期望电机转矩值 | 例： $$t_{ff} = 0.75(N*m)$$ <br> $$\tau_{set} = t_{ff} *256 = 0.75*256 =192 $$ <br> $$注：\lvert t_{ff} \rvert \leqslant 127.99N \bullet m $$
 控制参数(共12byte) | 40-55（2Byte） | $\omega_{set}$ | 期望电机速度 | 例： $$\omega_{des} = 90 = \pi/2(rad/s)$$ <br>$$\omega_{set} = \omega_{des}/2 \pi * 256 = 128$$ <br>$$注：2\pi = 6.28rad/s = 60PRM$$ <br>$$\lvert \omega_{des} \leqslant 804.0rad/s \rvert $$ 
 控制参数(共12byte) | 56-87（4Byte） | $\theta_{set}$ | 期望电机输出位置(多圈累加) | 例：  $$\theta_{des} = 90&deg; = \frac{\pi}{2} = 1.57(rad)$$<br> $$\theta_{set} = \frac{\theta_{des}}{2\pi} * 32768 = 8187$$<br> $$注：2\pi = 360&deg; = 6.2831rad$$<br> $$\lvert \theta_{des} \rvert \leqslant 411774rad(65535圈)$$
 控制参数(共12byte) | 88-103（2Byte） | $K_{pos}$ | 电机刚度系数/ 位置误差比例系数(多圈累加) | 例： $$k_p = 0.1$$<br> $$k_{pos} = k_p * 1280 = 128$$<br> $$注：0 \leqslant k_p \leqslant 25.599$$
